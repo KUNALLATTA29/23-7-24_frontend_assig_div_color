@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color div</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 1000px;
+            gap: 10px;
+            padding: 5% 0;
+            height: auto;
+            border: 2px solid black;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+        }
+        input{
+            padding: 1%;
+            height: 30%;
+        }
+        button{
+            border-radius: 50px;
+            height: 30%;
+            width: 8vw;
+        }
+    </style>
+</head>
+<body>
+    <input id="col" type="text">
+        <input id="num" type="number">
+        <button id="btn">submit</button>
+    <div class="container">
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+    </div>
+
+    <script>
+        document.getElementById("btn").addEventListener('click',()=>{
+            let c = document.getElementById("col").value;
+            let di = document.getElementById("num").value;
+
+            document.getElementById(`${di}`).style.backgroundColor = `${c}`;
+            document.getElementById("num").value = " ";
+            document.getElementById("col").value = " ";
+        })
+    </script>
+</body>
+</html>
